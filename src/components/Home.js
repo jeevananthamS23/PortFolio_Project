@@ -1,6 +1,5 @@
 import React from "react";
 import { ArrowRight, Download } from "lucide-react";
-// import profileImage from "../../assets/profile-image.jpg";
 import "./Home.css";
 
 const Home = () => {
@@ -12,9 +11,8 @@ const Home = () => {
   };
 
   const handleDownloadCV = () => {
-    // Replace this with actual CV download logic
     const link = document.createElement("a");
-    link.href = "/cv.pdf"; // make sure cv.pdf is inside public folder
+    link.href = "/cv.pdf";
     link.download = "Alex_Johnson_CV.pdf";
     link.click();
   };
