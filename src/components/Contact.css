@@ -1,39 +1,126 @@
-.contact {
-  padding: 80px 50px;
-  background: #f5f5f5;
-  text-align: center;
-}
 
-.contact h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 500px;
+/* Contact Styles */
+.contact-container {
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-input, textarea {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-top: 3rem;
 }
 
-button {
-  padding: 12px;
-  background: #ff9800;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
+.contact-info h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-button:hover {
-  background: #e67e22;
+.contact-info p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.light-mode .contact-info p {
+ color: black;
+  font-weight: 490;
+}
+
+.dark-mode .contact-info p {
+  color: var(--text-dark-secondary);
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.light-mode .contact-link {
+  background: var(--bg-light-secondary);
+color: black;
+  font-weight: 490;
+}
+
+.dark-mode .contact-link {
+  background: var(--bg-dark-secondary);
+  color: var(--text-dark);
+}
+
+.contact-link:hover {
+  transform: translateX(10px);
+  background: var(--primary);
+  color: white;
+}
+
+.contact-form {
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.light-mode .contact-form {
+  background:  #F0F8FF;
+  box-shadow: 0 10px 30px rgb(178, 230, 233);
+}
+
+.dark-mode .contact-form {
+  background: var(--bg-dark-secondary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.875rem;
+  border: 2px solid;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+.light-mode .form-group input,
+.light-mode .form-group textarea {
+  background: var(--bg-light);
+  border-color: var(--border-light);
+  color: var(--text-light);
+}
+
+.dark-mode .form-group input,
+.dark-mode .form-group textarea {
+  background: var(--bg-dark);
+  border-color: var(--border-dark);
+  color: var(--text-dark);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.form-group textarea {
+  resize: vertical;
 }

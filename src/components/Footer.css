@@ -1,6 +1,121 @@
+/* Footer Styles */
 .footer {
-  background: #1e1e2f;
-  color: #fff;
+  padding: 3rem 2rem 1.5rem;
+  border-top: 1px solid;
+}
+
+.light-mode .footer {
+  background: var(--bg-light-secondary);
+  border-top-color: var(--border-light);
+}
+
+.dark-mode .footer {
+  background: var(--bg-dark-secondary);
+  border-top-color: var(--border-dark);
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.footer-section h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-section p {
+  margin-bottom: 0.5rem;
+}
+
+.light-mode .footer-section p {
+color: black;
+  font-weight: 495;
+}
+
+.dark-mode .footer-section p {
+  color: var(--text-dark-secondary);
+}
+
+.footer-section a {
+  display: block;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.light-mode .footer-section a {
+color: black;
+  font-weight: 490;
+}
+
+.dark-mode .footer-section a {
+  color: var(--text-dark-secondary);
+}
+
+.footer-section a:hover {
+  color: var(--primary);
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.footer-social a {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.light-mode .footer-social a {
+  background: var(--bg-light);
+  color: var(--text-light);
+}
+
+.dark-mode .footer-social a {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.footer-social a:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
   text-align: center;
-  padding: 20px;
+  padding-top: 2rem;
+  border-top: 1px solid;
+}
+
+.light-mode .footer-bottom {
+  border-top-color: var(--border-light);
+color: black;
+  font-weight: 490;
+}
+
+.dark-mode .footer-bottom {
+  border-top-color: var(--border-dark);
+  color: var(--text-dark-secondary);
 }

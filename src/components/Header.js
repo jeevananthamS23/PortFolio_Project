@@ -1,36 +1,52 @@
-import React, { useState } from "react";
+import "./Responsive.css";
 import "./Header.css";
+import React from "react";
+import { Code, Sun, Moon, X, Menu } from "lucide-react";
 
-const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+function Header({ darkMode, toggleTheme, menuOpen, toggleMenu, activeSection, setActiveSection }) {
+  const navLinks = ['home', 'about', 'skills', 'certifications', 'projects', 'contact'];
+
+  const scrollToSection = (section) => {
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setActiveSection(section);
+      toggleMenu();
+    }
+  };
+ 
+
 
   return (
     <header className="header">
-      <div className="logo">MyPortfolio</div>
+      <div className="header-container">
+        <div className="logo">
+          <span>Creations</span>
+        </div>
+        
+        <nav className={`nav ${menuOpen ? 'nav-open' : ''}`}>
+          {navLinks.map(link => (
+            <a 
+              key={link}
+              onClick={() => scrollToSection(link)}
+              className={activeSection === link ? 'active' : ''}
+            >
+              {link.charAt(0).toUpperCase() + link.slice(1)}
+            </a>
+          ))}
+        </nav>
 
-      {/* Hamburger Icon */}
-      <div
-        className={`hamburger ${menuOpen ? "active" : ""}`}
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        <span></span>
-        <span></span>
-        <span></span>
+        <div className="header-actions">
+          <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
+            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+          <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
-
-      {/* Navigation */}
-      <nav className={`nav ${menuOpen ? "open" : ""}`}>
-        <ul className="nav-links">
-          <li><a href="#home" onClick={() => setMenuOpen(false)}>Home</a></li>
-          <li><a href="#about" onClick={() => setMenuOpen(false)}>About</a></li>
-          <li><a href="#certifications" onClick={() => setMenuOpen(false)}>Certifications</a></li>
-          <li><a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a></li>
-          <li><a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a></li>
-          <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
-        </ul>
-      </nav>
     </header>
   );
-};
+}
 
 export default Header;
